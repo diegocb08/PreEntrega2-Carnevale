@@ -38,6 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const data = Object.fromEntries(fd.entries());
             if (data.price) data.price = Number(data.price);
             if (data.stock) data.stock = Number(data.stock);
+            if (!data.title || !data.description || !data.code || !data.category || isNaN(data.price) || isNaN(data.stock)) {
+                alert("Completá todos los campos correctamente");
+                return;
+            }
+
             socket.emit("createProduct", data);
             form.reset();
         });
