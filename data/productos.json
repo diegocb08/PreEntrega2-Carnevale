@@ -1,13 +1,1 @@
-[
-  {
-    "id": "c0159141-cec6-409c-bbc5-916c5939874c",
-    "title": "Celular de ejemplo 2",
-    "description": "Un smartphone para pruebas",
-    "code": "XYZ123s",
-    "price": 500,
-    "status": true,
-    "stock": 10,
-    "category": "Electrónica",
-    "thumbnails": []
-  }
-]
+[]

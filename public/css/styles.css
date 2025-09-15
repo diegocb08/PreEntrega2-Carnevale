@@ -1,0 +1,70 @@
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	background-color: #f8f9fa;
+	color: #333;
+	padding: 20px;
+}
+
+h1 {
+	color: #222;
+	margin-bottom: 1rem;
+}
+
+#productsList,
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+#productsList li,
+ul li {
+	background: #fff;
+	margin-bottom: 10px;
+	padding: 12px 15px;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+button {
+	background-color: #007bff;
+	border: none;
+	color: #fff;
+	padding: 6px 12px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #0056b3;
+}
+
+button.deleteBtn {
+	background-color: #dc3545;
+}
+
+button.deleteBtn:hover {
+	background-color: #a71d2a;
+}
+
+/* Formulario */
+form {
+	margin-bottom: 20px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 10px;
+}
+
+form input {
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+form button {
+	grid-column: span 2;
+	justify-self: start;
+}

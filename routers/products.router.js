@@ -43,6 +43,13 @@ productsRouter.post("/", validateProductFields, async (req, res) => {
   try {
     const newProductData = req.body;
     const newProduct = await productManager.addProduct(newProductData);
+
+    const io = req.app.get("io");
+    if (io) {
+      const products = await productManager.getProducts();
+      io.emit("updateProducts", products);
+    }
+
     res
       .status(201)
       .json({ message: "Producto agregado exitosamente", product: newProduct });
@@ -61,6 +68,12 @@ productsRouter.put("/:pid", async (req, res) => {
     );
 
     if (updatedProduct) {
+      const io = req.app.get("io");
+      if (io) {
+        const products = await productManager.getProducts();
+        io.emit("updateProducts", products);
+      }
+
       res.json({
         message: "Producto actualizado exitosamente",
         product: updatedProduct,
@@ -81,6 +94,12 @@ productsRouter.delete("/:pid", async (req, res) => {
     const success = await productManager.deleteProduct(pid);
 
     if (success) {
+      const io = req.app.get("io");
+      if (io) {
+        const products = await productManager.getProducts();
+        io.emit("updateProducts", products);
+      }
+
       res.json({ message: "Producto eliminado exitosamente." });
     } else {
       res.status(404).json({ error: "Producto no encontrado para eliminar." });

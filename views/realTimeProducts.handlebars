@@ -1,0 +1,23 @@
+<h1>Productos</h1>
+
+<form id="productForm">
+	<input name="title" placeholder="title" required />
+	<input name="description" placeholder="description" required />
+	<input name="code" placeholder="code" required />
+	<input type="number" name="price" placeholder="price" required />
+	<input type="number" name="stock" placeholder="stock" required />
+	<input name="category" placeholder="category" required />
+	<button type="submit">Crear</button>
+</form>
+
+<ul id="productsList">
+	{{#each products}}
+		<li data-id="{{this.id}}">
+			<strong>{{this.title}}</strong>
+			—
+			{{this.description}}
+			— ${{this.price}}
+			<button class="deleteBtn" data-id="{{this.id}}">Eliminar</button>
+		</li>
+	{{/each}}
+</ul>
