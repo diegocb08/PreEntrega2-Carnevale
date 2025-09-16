@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "id": "1afd5456-4b5b-4fe1-8d85-cf1e4ec954e9",
+    "title": "Iphone x ",
+    "description": "alta gama",
+    "code": "001",
+    "price": 1500,
+    "status": true,
+    "stock": 20,
+    "category": "celulares",
+    "thumbnails": []
+  }
+]
